@@ -4,12 +4,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Student s=new Student(1,"Shiivu",19);
-		Result r=new Result(1,"maths",75);
+		StudentManager manager =new StudentManager();
+		
+		manager.addStudent(new Student(1,"shivu",19));
+		manager.addStudent(new Student(2,"karan",26));
+		manager.addStudent(new Student(3,"aujla",28));
 		
 		
-		System.out.println(s);
-		System.out.println(r);
+		System.out.println("studentsList");
+		manager.viewStudents();
+		
+		System.out.println("delete student");
+		manager.deleteStudent(3);
+		manager.viewStudents();
 
 	}
 
