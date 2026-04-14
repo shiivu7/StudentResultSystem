@@ -17,6 +17,11 @@ public class Main {
 		System.out.println("delete student");
 		manager.deleteStudent(3);
 		manager.viewStudents();
+		
+		manager.addResultToStudent(1, new Result(1, "Maths", 90));
+		manager.addResultToStudent(1, new Result(1, "Science", 85));
+		
+		
 
 	}
 

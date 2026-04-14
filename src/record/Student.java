@@ -1,6 +1,11 @@
 package record;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
+	
+	   private List<Result> results =new ArrayList<Result>();
 
 		
 		private int id;
@@ -41,6 +46,11 @@ public class Student {
 
 		public void setAge(int age) {
 			this.age = age;
+		}
+
+		public void addResult(Result result) {
+			// TODO Auto-generated method stub
+			
 		}
 		
 

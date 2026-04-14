@@ -12,6 +12,18 @@ public class StudentManager {
         students.add(s);
         System.out.println("Added: " + s);
     }
+    
+    public void addResultToStudent(int studentId,Result result) {
+    	
+    	for(Student s:students) {
+    		if(s.getId()==studentId) {
+    			s.addResult(result);
+    			System.out.println("result added to s tudent"+studentId);
+    			return;
+    		}
+    	}
+    	System.out.println("student not Found!");
+    }
 
     
     public void viewStudents() {
