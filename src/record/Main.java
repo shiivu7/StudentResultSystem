@@ -23,7 +23,7 @@ public class Main {
 		manager.viewStudents();
 		manager.sortStudentsByMarks();
 		manager.viewStudents();
-		
+		manager.getTopper();
 
 	}
 

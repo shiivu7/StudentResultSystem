@@ -70,7 +70,7 @@ public class StudentManager {
     
     public void getTopper() {
 
-        if (student.isEmpty()) {
+        if (students.isEmpty()) {
             System.out.println("No students found!");
             return;
         }
