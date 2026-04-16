@@ -1,6 +1,8 @@
 package record;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class StudentManager {
@@ -54,5 +56,15 @@ public class StudentManager {
         } else {
             System.out.println("No student with id: " + id);
         }
+    }
+    public void sortStudentsByMarks() {
+
+        Collections.sort(students, new Comparator<Student>() {
+            public int compare(Student s1, Student s2) {
+                return s2.gettotalmarks() - s1.gettotalmarks(); // descending
+            }
+        });
+
+        System.out.println("Students sorted by marks");
     }
 }
