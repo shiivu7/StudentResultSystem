@@ -61,10 +61,22 @@ public class StudentManager {
 
         Collections.sort(students, new Comparator<Student>() {
             public int compare(Student s1, Student s2) {
-                return s2.gettotalmarks() - s1.gettotalmarks(); // descending
+                return s2.gettotalmarks() - s1.gettotalmarks(); 
             }
         });
 
         System.out.println("Students sorted by marks");
+    }
+    
+    public void getTopper() {
+
+        if (student.isEmpty()) {
+            System.out.println("No students found!");
+            return;
+        }
+
+        Student topper = students.get(0); // after sorting
+
+        System.out.println("Topper is: " + topper);
     }
 }
