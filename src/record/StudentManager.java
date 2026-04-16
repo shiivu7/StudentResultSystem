@@ -1,5 +1,9 @@
 package record;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -78,5 +82,48 @@ public class StudentManager {
         Student topper = students.get(0); // after sorting
 
         System.out.println("Topper is: " + topper);
+    }
+    
+    public void saveToFile() {
+
+        try {
+            FileWriter writer = new FileWriter("students.txt");
+
+            for (Student s : students) {
+                writer.write(s.toString() + "\n");
+            }
+
+            writer.close();
+            System.out.println("Data saved to file");
+
+        } catch (IOException e) {
+            System.out.println("Error saving file");
+        }
+    }
+    
+    public void loadFromFile() {
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("students.txt"));
+
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+
+                String[] parts = line.split(",");
+
+                int id = Integer.parseInt(parts[0]);
+                String name = parts[1];
+                int age = Integer.parseInt(parts[2]);
+
+                std.add(new Student(id, name, age));
+            }
+
+            reader.close();
+            System.out.println("Loaded successfully");
+
+        } catch (IOException e) {
+            System.out.println("Error loading file");
+        }
     }
 }

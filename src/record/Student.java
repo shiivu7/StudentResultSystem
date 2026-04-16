@@ -15,7 +15,7 @@ public class Student {
 		
 		public String getGrade() {
 
-		    int total = getTotalMarks();
+		    int total = gettotalmarks();
 
 		    if (total >= 90) {
 		        return "A";
@@ -35,10 +35,11 @@ public class Student {
 		
 		@Override
 		public String toString() {
-			return "Student [name=" +name +
-					", age " +age +
-					", id= " +id +
-					",Total Mrks" +gettotalmarks() + "]" ;
+		    return "Student [name=" + name +
+		           ", age=" + age +
+		           ", id=" + id +
+		           ", totalMarks=" + gettotalmarks() +
+		           ", grade=" + getGrade() + "]";
 		}
 
 		public Student(int id, String name, int age) {

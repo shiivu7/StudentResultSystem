@@ -24,6 +24,9 @@ public class Main {
 		manager.sortStudentsByMarks();
 		manager.viewStudents();
 		manager.getTopper();
+		manager.saveToFile();
+
+        manager.loadFromFile();
 
 	}
 
