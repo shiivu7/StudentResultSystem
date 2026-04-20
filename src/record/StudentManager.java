@@ -30,6 +30,14 @@ public class StudentManager {
     	}
     	System.out.println("student not Found!");
     }
+    public Student findStudentById(int id) {
+        for (Student s : students) {
+            if (s.getId() == id) {
+                return s;
+            }
+        }
+        return null;
+    }
 
     
     public void viewStudents() {
