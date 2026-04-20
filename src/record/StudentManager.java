@@ -41,16 +41,8 @@ public class StudentManager {
     public int getStudentCount() {
         return students.size();
     }
-    public List<Student> getStudentsAboveAge(int age) {
-        List<Student> result = new ArrayList<>();
-        for (Student s : students) {
-            if (s.getAge() > age) {
-                result.add(s);
-            }
-        }
-        return result;
-    }
     
+
     
     public void viewStudents() {
         if (students.isEmpty()) {
