@@ -51,6 +51,15 @@ public class StudentManager {
         }
     }
 
+    public boolean updateStudentName(int id, String newName) {
+        Student s = findStudentById(id);
+        if (s != null) {
+            s.setName(newName);
+            return true;
+        }
+        return false;
+    }
+
   
     public void deleteStudent(int id) {
         Student found = null;
