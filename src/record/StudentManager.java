@@ -24,7 +24,7 @@ public class StudentManager {
     	for(Student s:students) {
     		if(s.getId()==studentId) {
     			s.addResult(result);
-    			System.out.println("result added to s tudent"+studentId);
+    			System.out.println("result added to student"+studentId);
     			return;
     		}
     	}
