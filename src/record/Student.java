@@ -3,90 +3,58 @@ package record;
 import java.util.ArrayList;
 import java.util.List;
 
-import Studentmanage.Result;
-
 public class Student {
-	
-	   private List<Result> results =new ArrayList<Result>();
-	   
-	   public void addresults(Result r) {
-			results.add(r);
-		}
-		
-		public String getGrade() {
 
-		    int total = gettotalmarks();
+    private int id;
+    private String name;
+    private int age;
+    private List<Result> results = new ArrayList<>();
 
-		    if (total >= 90) {
-		        return "A";
-		    } else if (total >= 75) {
-		        return "B";
-		    } else if (total >= 50) {
-		        return "C";
-		    } else {
-		        return "Fail";
-		    }
-		}
+    public Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
 
-		
-		private int id;
-		private String name;
-		private int age;
-		
-		@Override
-		public String toString() {
-		    return "Student [name=" + name +
-		           ", age=" + age +
-		           ", id=" + id +
-		           ", totalMarks=" + gettotalmarks() +
-		           ", grade=" + getGrade() + "]";
-		}
+    public void addResult(Result r) {
+        results.add(r);
+    }
 
-		public Student(int id, String name, int age) {
-			super();
-			this.id = id;
-			this.name = name;
-			this.age = age;
-		}
+    public int getTotalMarks() {
+        int total = 0;
+        for (Result r : results) {
+            total += r.getMarks();
+        }
+        return total;
+    }
 
-		public int getId() {
-			return id;
-		}
+    public String getGrade() {
+        int total = getTotalMarks();
 
-		public void setId(int id) {
-			this.id = id;
-		}
+        if (total >= 90) return "A";
+        if (total >= 75) return "B";
+        if (total >= 50) return "C";
+        return "Fail";
+    }
 
-		public String getName() {
-			return name;
-		}
+    public int getId() {
+        return id;
+    }
 
-		public void setName(String name) {
-			this.name = name;
-		}
+    public String getName() {
+        return name;
+    }
 
-		public int getAge() {
-			return age;
-		}
+    public int getAge() {
+        return age;
+    }
 
-		public void setAge(int age) {
-			this.age = age;
-		}
-
-		public void addResult(Result result) {
-			results.add(result);
-		}
-		
-		public int gettotalmarks() {
-			int Total =0;
-			
-			for(Result r: results) {
-				Total +=r.getMarks();
-			}
-			return Total;
-		}
-		
-
-	}
-
-
+    @Override
+    public String toString() {
+        return "Student [id=" + id +
+                ", name=" + name +
+                ", age=" + age +
+                ", totalMarks=" + getTotalMarks() +
+                ", grade=" + getGrade() + "]";
+    }
+}
