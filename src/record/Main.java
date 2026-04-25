@@ -12,14 +12,7 @@ public class Main {
 
         while (true) {
 
-            System.out.println("\n1. Add Student");
-            System.out.println("2. View Students");
-            System.out.println("3. Delete Student");
-            System.out.println("4. Add Result");
-            System.out.println("5. Sort by Marks");
-            System.out.println("6. Show Topper");
-            System.out.println("7. Exit");
-
+            
             int choice = sc.nextInt();
 
             switch (choice) {
