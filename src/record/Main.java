@@ -70,7 +70,11 @@ public class Main {
                     manager.getTopper();
                     break;
 
-                
+                case 7:
+                     manager.saveToFile();
+                    System.out.println("Exiting...");
+                    sc.close();
+                    return;
 
                 default:
                     System.out.println("Invalid choice");
