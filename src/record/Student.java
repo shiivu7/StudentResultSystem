@@ -28,32 +28,13 @@ public class Student {
         return total;
     }
 
-    function rotateclockwise(arr, k) {
-        const n = arr.length;
-        if (n === 0) return;
-    
-        k = k % n;
-    
-        // Reverse last k numbers
-        reverse(arr, n - k, n - 1);
-    
-        // Reverse the first n-k terms
-        reverse(arr, 0, n - k - 1);
-    
-        // Reverse the entire array
-        reverse(arr, 0, n - 1);
-    
-        // No return — modifies arr in place
-    }
-    
-    function reverse(arr, start, end) {
-        while (start < end) {
-            let temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        }
+    public String getGrade() {
+        int total = getTotalMarks();
+
+        if (total >= 90) return "A";
+        if (total >= 75) return "B";
+        if (total >= 50) return "C";
+        return "Fail";
     }
 
     public int getId() {
